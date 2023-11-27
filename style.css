@@ -26,6 +26,10 @@ h1 {
     margin-bottom: 100px;
 }
 
+td:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
 th,
 td {
     width: 166px;
@@ -36,6 +40,7 @@ td {
 
 td {
     background-color: #323232;
+    cursor: pointer;
 }
 
 table {

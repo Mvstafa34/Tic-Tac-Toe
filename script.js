@@ -1,25 +1,25 @@
 let fields = [
     null,
     null,
-    'circle',
     null,
-    'cross',
+    null,
+    null,
     null,
     null,
     null,
     null
-]
+];
 
+let currentPlayer = 'cross'; // Start mit 'cross', kann auch mit 'circle' initialisiert werden
 
 function init() {
     // Call the render function to display the initial state
     render();
 }
 
-
 function render() {
     const content = document.getElementById('content');
-    let tableHTML = '<table>'; 
+    let tableHTML = '<table>';
 
     for (let i = 0; i < 3; i++) {
         tableHTML += '<tr>';
@@ -28,15 +28,9 @@ function render() {
             const value = fields[index];
 
             if (value) {
-                if (value === 'cross') {
-                    tableHTML += `<td>${generateAnimatedCross()}</td>`;
-                } else if (value === 'circle') {
-                    tableHTML += `<td>${generateAnimatedCircle()}</td>`;
-                } else {
-                    tableHTML += '<td></td>';
-                }
+                tableHTML += `<td onclick="handleClick(${index})">${generateSymbolHTML(value)}</td>`;
             } else {
-                tableHTML += '<td></td>';
+                tableHTML += `<td onclick="handleClick(${index})"></td>`;
             }
         }
         tableHTML += '</tr>';
@@ -45,6 +39,40 @@ function render() {
     tableHTML += '</table>';
     content.innerHTML = tableHTML;
 }
+
+function generateSymbolHTML(symbol) {
+    if (symbol === 'cross') {
+        return generateAnimatedCross();
+    } else if (symbol === 'circle') {
+        return generateAnimatedCircle();
+    } else {
+        return '';
+    }
+}
+
+function handleClick(index) {
+    const clickedCell = fields[index];
+    if (!clickedCell) {
+        // Generate the symbol HTML based on the current player
+        const symbolHTML = generateSymbolHTML(currentPlayer);
+
+        // Insert the generated symbol HTML into the clicked cell
+        const cell = document.getElementsByTagName('td')[index];
+        cell.innerHTML = symbolHTML;
+
+        // Remove the onclick function to prevent further clicks on this cell
+        cell.onclick = null;
+
+        // Update the fields array
+        fields[index] = currentPlayer;
+
+        // Wechseln Sie den aktuellen Spieler für den nächsten Zug
+        currentPlayer = (currentPlayer === 'cross') ? 'circle' : 'cross';
+    }
+}
+
+// Restliche Funktionen bleiben unverändert
+
 
 
 
