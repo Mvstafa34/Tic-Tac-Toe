@@ -21,6 +21,11 @@ table {
     /* Um sicherzustellen, dass die Trennlinien nur innerhalb der Tabelle sind */
 }
 
+#content {
+    position: relative;
+}
+
+
 h1 {
     font-size: 50px;
     margin-bottom: 100px;
@@ -32,8 +37,8 @@ td:hover {
 
 th,
 td {
-    width: 166px;
-    height: 166px;
+    width: 150px;
+    height: 150px;
     text-align: center;
     font-size: 60px;
 }
@@ -66,3 +71,9 @@ table tr:last-child td {
 table tr td:last-child {
     border-right: 0;
 }
+.winning-line {
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+}
+
