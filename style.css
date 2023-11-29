@@ -28,7 +28,7 @@ table {
 
 h1 {
     font-size: 50px;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 }
 
 td:hover {
@@ -92,4 +92,20 @@ button {
 
 button:hover {
     background-color: #45a049; /* Hintergrundfarbe ändern, wenn der Mauszeiger über dem Button schwebt */
+}
+
+
+@media (max-width: 550px) {
+    h1 {
+        font-size: 40px;
+        margin-bottom: 100px;
+    }
+
+    table {
+        width: 250px;
+        height: 250px;
+    }
+    td {
+        height: 100px;
+    }
 }
