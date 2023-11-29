@@ -58,6 +58,23 @@ function generateSymbolHTML(symbol) {
     }
 }
 
+
+function restartGame() {
+    fields = [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+    ];
+    render();
+}
+
+
 function handleClick(index) {
     if (gameEnded) {
         // Das Spiel ist vorbei, keine weiteren Züge zulassen

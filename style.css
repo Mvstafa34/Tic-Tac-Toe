@@ -15,9 +15,9 @@ table {
     border-collapse: collapse;
     width: 500px;
     height: 500px;
-    border: 0
-        /* Weiße Border mit 5px Dicke für die Tabelle */
-        border-spacing: 0;
+    border: 0;
+    /* Weiße Border mit 5px Dicke für die Tabelle */
+    border-spacing: 0;
     /* Um sicherzustellen, dass die Trennlinien nur innerhalb der Tabelle sind */
 }
 
@@ -71,9 +71,25 @@ table tr:last-child td {
 table tr td:last-child {
     border-right: 0;
 }
+
 .winning-line {
     position: absolute;
     background-color: white;
     z-index: 1;
 }
 
+button {
+    margin: auto 0;
+    background-color: #4CAF50; /* Hintergrundfarbe des Buttons */
+    color: white;
+    padding: 10px 20px; /* Innenabstand des Buttons */
+    font-size: 16px;
+    border: none;
+    border-radius: 5px; /* abgerundete Ecken */
+    cursor: pointer;
+    transition: background-color 0.3s; /* fließender Übergang bei Hover */
+}
+
+button:hover {
+    background-color: #45a049; /* Hintergrundfarbe ändern, wenn der Mauszeiger über dem Button schwebt */
+}
